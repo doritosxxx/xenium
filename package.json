@@ -1,0 +1,25 @@
+{
+  "name": "fractal-lib",
+  "version": "1.0.0",
+  "description": "Библиотека для генерации множества точек фрактала по его описанию.",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "test": "ts-node src/index.ts",
+	"build": "tsc -p ."
+  },
+  "keywords": [
+    "fractal"
+  ],
+  "author": "doritosxxx",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/complex.js": "^2.0.2",
+    "@types/node": "^14.14.37",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "complex.js": "^2.0.12"
+  }
+}
