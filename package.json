@@ -6,7 +6,7 @@
   "types": "lib",
   "scripts": {
     "test": "ts-node src/index.ts",
-	"build": "tsc -p ."
+    "build": "tsc -p ."
   },
   "keywords": [
     "fractal"
@@ -20,6 +20,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "canvas": "^2.7.0",
     "complex.js": "^2.0.12"
   }
 }
