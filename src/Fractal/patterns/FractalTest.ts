@@ -3,13 +3,12 @@ import { Color, ColoredPoint2d, LineStyle } from "../../Drawing";
 import { GraphicFilledRectangle, GraphicPoint } from "../../Drawing/GraphicsElements";
 import ProxyBase from "../../Proxy/ProxyBase";
 import Fractal from "../Fractal";
+import {randomInRange} from '../../functions'
 
 class FractalTest extends Fractal {
 
 	constructor(width: number, height: number, iterations?: number, firstColor?: Color, lastColor?: Color){
-		// Bruh.
-		iterations ??= Math.random()*(FractalTest.iterationRange[1] - FractalTest.iterationRange[0])+FractalTest.iterationRange[0];
-
+		iterations ??= randomInRange(...FractalTest.iterationRange)
 		super(width, height, iterations, firstColor, lastColor)
 	}
 
@@ -20,7 +19,6 @@ class FractalTest extends Fractal {
 			caption.add("some test string")
 			caption.add("this is key", "this is value")
 		}
-		
 		
 		const gradient = Color.GetGradient(this.firstColor, this.lastColor, this.iterations)
 		const lineStyle = new LineStyle(3, new Color(0,0,0), new Color(0,0,0))

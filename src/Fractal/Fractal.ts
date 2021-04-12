@@ -50,11 +50,10 @@ abstract class Fractal implements IGeneratable{
 	async generate(proxy: ProxyBase, caption?: Caption | undefined){
 		if(caption !== undefined){
 			caption.add("colors", this.firstColor + "-" + this.lastColor)
+			caption.add("iterations", this.iterations)
 			// TODO: Add fractal name to the caption.
 		}
 	}
-
-	
 
 }
 

@@ -21,6 +21,7 @@ class CanvasProxy extends ProxyBase {
 
 	protected point(point: GraphicPoint){
 		this.setStyle(point)
+		this.context.beginPath();
 		this.context.arc(
 			point.x,
 			point.y, 
@@ -49,7 +50,6 @@ class CanvasProxy extends ProxyBase {
 			rectangle.w,
 			rectangle.h
 		)
-		//this.context.fill()
 
 	}
 
