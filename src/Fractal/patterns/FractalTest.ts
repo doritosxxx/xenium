@@ -1,7 +1,7 @@
 import Caption from "../../Caption";
 import { Color, ColoredPoint2d, LineStyle } from "../../Drawing";
-import { GraphicPoint } from "../../Drawing/GraphicsElements";
-import ICanvaslike from "../../Proxy/ICanvaslike";
+import { GraphicFilledRectangle, GraphicPoint } from "../../Drawing/GraphicsElements";
+import ProxyBase from "../../Proxy/ProxyBase";
 import Fractal from "../Fractal";
 
 class FractalTest extends Fractal {
@@ -13,17 +13,41 @@ class FractalTest extends Fractal {
 		super(width, height, iterations, firstColor, lastColor)
 	}
 
-	async generate(proxy: ICanvaslike, caption?: Caption | undefined): Promise<void> {
+	async generate(proxy: ProxyBase, caption?: Caption | undefined): Promise<void> {
 		super.generate(proxy, caption)
+
 		if(caption !== undefined){
 			caption.add("some test string")
 			caption.add("this is key", "this is value")
 		}
+		
+		
+		const gradient = Color.GetGradient(this.firstColor, this.lastColor, this.iterations)
+		const lineStyle = new LineStyle(3, new Color(0,0,0), new Color(0,0,0))
+		
+		for(let i=0; i<this.iterations; i++){
+			const newLineStyle: LineStyle = new LineStyle(
+				lineStyle.lineWidth,
+				gradient[i],
+				lineStyle.strokeStyle
+			)
+			proxy.add( new GraphicFilledRectangle(
+				newLineStyle,
+				this.width/this.iterations*i,
+				0,
+				this.width/this.iterations,
+				this.height,
+			))
 
-		const lineStyle = new LineStyle(3, Color.GetRandom(), Color.GetRandom())
+			proxy.add( new GraphicFilledRectangle(
+				newLineStyle,
+				0,
+				this.height/this.iterations*i,
+				this.width,
+				this.height/this.iterations,
+			))
 
-		for(let i=0; i<this.iterations; i++)
-			proxy.point(new GraphicPoint(lineStyle, this.width/this.iterations*i, i ));
+		}
 
 	}
 

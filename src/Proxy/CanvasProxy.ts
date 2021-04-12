@@ -1,15 +1,15 @@
 import { Canvas } from 'canvas';
 import { LineStyle } from '../Drawing';
 import { GraphicPoint, GraphicRectangle, GraphicFilledRectangle } from '../Drawing/GraphicsElements';
-import ICanvaslike from './ICanvaslike'
+import ProxyBase from './ProxyBase'
 
-class CanvasProxy implements ICanvaslike {
+class CanvasProxy extends ProxyBase {
 	public readonly context:CanvasRenderingContext2D
 
 	constructor(width:number, height:number){
+		super()
 
 		const canvas = new Canvas(width, height)
-
 		this.context = canvas.getContext("2d")!
 	}
 
@@ -19,7 +19,7 @@ class CanvasProxy implements ICanvaslike {
 		this.context.lineWidth = style.lineWidth
 	}
 
-	point(point: GraphicPoint){
+	protected point(point: GraphicPoint){
 		this.setStyle(point)
 		this.context.arc(
 			point.x,
@@ -31,7 +31,7 @@ class CanvasProxy implements ICanvaslike {
 		this.context.fill()
 	}
 
-	rectangle(rectangle: GraphicRectangle){
+	protected rectangle(rectangle: GraphicRectangle){
 		this.setStyle(rectangle)
 		this.context.rect(
 			rectangle.x,
@@ -41,14 +41,16 @@ class CanvasProxy implements ICanvaslike {
 		)
 	}
 
-	filledRectangle(rectangle: GraphicFilledRectangle){
+	protected filledRectangle(rectangle: GraphicFilledRectangle){
 		this.setStyle(rectangle)
-		this.context.rect(
+		this.context.fillRect(
 			rectangle.x,
 			rectangle.y,
 			rectangle.w,
 			rectangle.h
 		)
+		//this.context.fill()
+
 	}
 
 }

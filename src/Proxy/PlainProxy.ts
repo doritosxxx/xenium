@@ -1,27 +1,27 @@
 import { GraphicElement, GraphicPoint, GraphicRectangle } from "../Drawing/GraphicsElements";
-import ICanvaslike from "./ICanvaslike";
+import ProxyBase from "./ProxyBase";
 
 /**
  * Simply adds all elements to the list.
  */
-class PlainProxy implements ICanvaslike {
+class PlainProxy extends ProxyBase {
 	
 	public readonly graphics:Array<GraphicElement> = []
 
-	private add(graphic: GraphicElement):void{
+	protected push(graphic: GraphicElement): void{
 		this.graphics.push(graphic)
 	}
 
-	point(point: GraphicPoint):void{
-		this.add(point)
+	protected point(point: GraphicPoint): void{
+		this.push(point)
 	}
 
-	rectangle(rectangle: GraphicRectangle): void{
-		this.add(rectangle)
+	protected rectangle(rectangle: GraphicRectangle): void{
+		this.push(rectangle)
 	}
 
-	filledRectangle(rectangle: GraphicRectangle): void{
-		this.add(rectangle)
+	protected filledRectangle(rectangle: GraphicRectangle): void{
+		this.push(rectangle)
 	}
 	
 }

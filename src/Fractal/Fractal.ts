@@ -1,6 +1,6 @@
 import Caption from '../Caption'
 import {Color} from '../Drawing'
-import ICanvaslike from '../Proxy/ICanvaslike'
+import ProxyBase from '../Proxy/ProxyBase'
 import IGeneratable from './IGeneratable'
 
 // Pattern must contain "generate" method to convert initial fractal data into points.
@@ -47,7 +47,7 @@ abstract class Fractal implements IGeneratable{
 	/**
 	 * @todo Add fractal name into the caption.
 	 */
-	async generate(proxy: ICanvaslike, caption?: Caption | undefined){
+	async generate(proxy: ProxyBase, caption?: Caption | undefined){
 		if(caption !== undefined){
 			caption.add("colors", this.firstColor + "-" + this.lastColor)
 			// TODO: Add fractal name to the caption.
