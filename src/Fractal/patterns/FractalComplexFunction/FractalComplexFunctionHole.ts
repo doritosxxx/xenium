@@ -1,6 +1,6 @@
 import Complex from "complex.js";
 import FractalComplexFunction from ".";
-import {prec, pm} from '../../../functions'
+import { pm, prec } from '../../../functions';
 
 class FractalComplexFunctionHole extends FractalComplexFunction {
 	name:string = "Hole"

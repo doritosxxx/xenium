@@ -1,5 +1,5 @@
 import Caption from '../Caption'
-import {Color} from '../Drawing'
+import { Color } from '../Drawing'
 import ProxyBase from '../Proxy/ProxyBase'
 import IGeneratable from './IGeneratable'
 
@@ -13,6 +13,7 @@ abstract class Fractal implements IGeneratable{
 	readonly iterations: number
 	readonly firstColor: Color
 	readonly lastColor: Color
+	//abstract name: string
 
 	/**
 	 * 
@@ -49,9 +50,9 @@ abstract class Fractal implements IGeneratable{
 	 */
 	async generate(proxy: ProxyBase, caption?: Caption | undefined){
 		if(caption !== undefined){
+			//caption.add(this.name)
 			caption.add("colors", this.firstColor + "-" + this.lastColor)
 			caption.add("iterations", this.iterations)
-			// TODO: Add fractal name to the caption.
 		}
 	}
 

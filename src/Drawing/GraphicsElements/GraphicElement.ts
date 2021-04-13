@@ -1,5 +1,4 @@
-import { GraphicFilledRectangle } from ".";
-import {Color, LineStyle} from "../index";
+import { Color, LineStyle } from "../index";
 
 
 /**

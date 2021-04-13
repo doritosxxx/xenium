@@ -1,4 +1,4 @@
-import { ColoredPoint2d, Color, LineStyle } from "../index";
+import { LineStyle } from "../index";
 import GraphicElement from "./GraphicElement";
 
 class GraphicPoint extends GraphicElement {

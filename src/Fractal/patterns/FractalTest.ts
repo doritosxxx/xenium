@@ -1,9 +1,9 @@
 import Caption from "../../Caption";
-import { Color, ColoredPoint2d, LineStyle } from "../../Drawing";
-import { GraphicFilledRectangle, GraphicPoint } from "../../Drawing/GraphicsElements";
+import { Color, LineStyle } from "../../Drawing";
+import { GraphicFilledRectangle } from "../../Drawing/GraphicsElements";
+import { randomInRange } from '../../functions';
 import ProxyBase from "../../Proxy/ProxyBase";
 import Fractal from "../Fractal";
-import {randomInRange} from '../../functions'
 
 class FractalTest extends Fractal {
 

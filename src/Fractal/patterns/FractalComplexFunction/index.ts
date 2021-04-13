@@ -2,9 +2,9 @@ import Complex from "complex.js";
 import Caption from '../../../Caption';
 import { Color, LineStyle, Point2d, Size } from '../../../Drawing';
 import { GraphicFilledRectangle, GraphicPoint } from "../../../Drawing/GraphicsElements";
+import { randomInRange } from '../../../functions';
 import { ProxyBase } from '../../../Proxy';
 import Fractal from "../../Fractal";
-import {randomInRange} from '../../../functions'
 
 abstract class FractalComplexFunction extends Fractal {
 	abstract name:string
