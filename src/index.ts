@@ -1,5 +1,11 @@
 import { Color } from './Drawing';
-import FractalComplexFunctionHole from './Fractal/patterns/FractalComplexFunction/FractalComplexFunctionHole';
+import { 
+	FractalComplexFunctionChaos, 
+	FractalComplexFunctionHole,
+	FractalComplexFunctionKnot,
+	FractalComplexFunctionSphere,
+	FractalComplexFunctionWhirl
+} from './Fractal/patterns/FractalComplexFunction';
 import FractalTest from './Fractal/patterns/FractalTest';
 import {CanvasProxy, PlainProxy} from './Proxy';
 import _fs  from 'fs'
@@ -7,6 +13,8 @@ const fs = _fs.promises
 
 import path from 'path'
 import Caption from './Caption';
+import AFractalComplexFunction from './Fractal/patterns/FractalComplexFunction/AFractalComplexFunction';
+import { Canvas, CanvasRenderingContext2D } from 'canvas'
 
 // CanvasProxy 500x500 and Test fractal.
 // Export to data uri.
@@ -28,7 +36,7 @@ async function test2(){
 	await fractal.generate(proxy)
 	const datauri = proxy.context.canvas.toDataURL()
 
-	fs.writeFile(path.resolve("./img.datauri"), datauri)
+	fs.writeFile(path.resolve(__dirname, "./img.datauri"), datauri)
 
 }
 
@@ -59,8 +67,40 @@ async function test4(){
 	await fractal.generate(proxy, caption)
 
 	console.log(caption.toString())
-
-
 }
 
-test4()
+/**
+ * Generate a pack of Complex Function fractals.
+ */
+async function test5(){
+	const dir = path.resolve( "./test5" )
+	if(!_fs.existsSync(dir))
+		await fs.mkdir(dir)
+	
+	const [width, height]:number[] = [500, 500]
+	const [color1, color2]:Color[] = [new Color("#ADFF2F"), new Color("#C71585")]
+
+	for(let it = 400; it<8000; it*=1.5){
+		// I should use factory here.
+
+		const fractals: AFractalComplexFunction[] = [
+			new FractalComplexFunctionChaos(width, height, it, 1, color1, color2),
+			new FractalComplexFunctionHole(width, height, it, 1, color1, color2),
+			new FractalComplexFunctionKnot(width, height, it, 1, color1, color2),
+			new FractalComplexFunctionSphere(width, height, it, 1, color1, color2),
+			new FractalComplexFunctionWhirl(width, height, it, 1, color1, color2)
+		]
+		
+		for(let i=0; i<fractals.length; i++){
+			const proxies = Array.from(new Array(5)).map(_ => new CanvasProxy(width, height));
+			fractals[i].generate(proxies[i]).then(()=>{
+				const buffer = (proxies[i].context.canvas as unknown as Canvas).toBuffer()
+				fs.writeFile(dir+`/fractal${i}_${it}.png`, new Uint8Array(buffer))
+			})
+		}
+		
+
+	}
+}
+
+test5()
