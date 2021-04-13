@@ -1,8 +1,8 @@
 import Complex from "complex.js";
-import FractalComplexFunction from ".";
+import AFractalComplexFunction from "./AFractalComplexFunction";
 import { prec } from '../../../functions';
 
-class FractalComplexFunctionShpere extends FractalComplexFunction {
+class FractalComplexFunctionShpere extends AFractalComplexFunction {
 	name:string = "Shpere"
 
 	invoke(x: number): Complex {

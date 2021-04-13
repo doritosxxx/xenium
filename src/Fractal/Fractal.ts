@@ -40,7 +40,7 @@ abstract class Fractal implements IGeneratable{
 
 		this.width = width
 		this.height = height
-		this.iterations = iterations
+		this.iterations = ~~iterations
 		this.firstColor = firstColor ?? Color.GetRandom()
 		this.lastColor = lastColor ?? Color.GetRandom()
 	}

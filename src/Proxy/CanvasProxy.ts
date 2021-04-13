@@ -1,10 +1,10 @@
-import { Canvas } from 'canvas';
+import { Canvas, CanvasRenderingContext2D } from 'canvas';
 import { LineStyle } from '../Drawing';
 import { GraphicPoint, GraphicRectangle, GraphicFilledRectangle } from '../Drawing/GraphicsElements';
 import ProxyBase from './ProxyBase'
 
 class CanvasProxy extends ProxyBase {
-	public readonly context:CanvasRenderingContext2D
+	public readonly context: CanvasRenderingContext2D
 
 	constructor(width:number, height:number){
 		super()
