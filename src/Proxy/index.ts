@@ -1,5 +1,5 @@
 import CanvasProxy from './CanvasProxy';
-import PlainProxy from './PlainProxy';
+import StorageProxy from './StorageProxy';
 import ProxyBase from './ProxyBase';
 
-export { ProxyBase, CanvasProxy, PlainProxy };
+export { ProxyBase, CanvasProxy, StorageProxy };

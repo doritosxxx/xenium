@@ -7,7 +7,7 @@ import {
 	FractalComplexFunctionWhirl
 } from './src/Fractal/patterns/FractalComplexFunction';
 import FractalTest from './src/Fractal/patterns/FractalTest';
-import {CanvasProxy, PlainProxy} from './src/Proxy';
+import {CanvasProxy, StorageProxy} from './src/Proxy';
 import _fs  from 'fs'
 const fs = _fs.promises
 
@@ -66,7 +66,7 @@ function test3(){
  */
 async function test4(){
 	const fractal = new FractalComplexFunctionHole(100, 100)
-	const proxy = new PlainProxy()
+	const proxy = new StorageProxy()
 	const caption = new Caption()
 	await fractal.generate(proxy, caption)
 
@@ -128,7 +128,7 @@ async function test6(){
 			FractalComplexFunctionWhirl
 		]
 		const fractal = new types[0](width, height)
-		const proxy = new PlainProxy()
+		const proxy = new StorageProxy()
 		try {
 			await fractal.generate(proxy)
 			successCount++
