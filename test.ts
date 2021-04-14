@@ -1,23 +1,25 @@
-import { Color } from './Drawing';
+import { Color } from './src/Drawing';
 import { 
 	FractalComplexFunctionChaos, 
 	FractalComplexFunctionHole,
 	FractalComplexFunctionKnot,
 	FractalComplexFunctionSphere,
 	FractalComplexFunctionWhirl
-} from './Fractal/patterns/FractalComplexFunction';
-import FractalTest from './Fractal/patterns/FractalTest';
-import {CanvasProxy, PlainProxy} from './Proxy';
+} from './src/Fractal/patterns/FractalComplexFunction';
+import FractalTest from './src/Fractal/patterns/FractalTest';
+import {CanvasProxy, PlainProxy} from './src/Proxy';
 import _fs  from 'fs'
 const fs = _fs.promises
 
 import path from 'path'
-import Caption from './Caption';
-import AFractalComplexFunction from './Fractal/patterns/FractalComplexFunction/AFractalComplexFunction';
+import Caption from './src/Caption';
+import AFractalComplexFunction from './src/Fractal/patterns/FractalComplexFunction/AFractalComplexFunction';
 import { Canvas, CanvasRenderingContext2D } from 'canvas'
 
-// CanvasProxy 500x500 and Test fractal.
-// Export to data uri.
+/**
+ * CanvasProxy 500x500 and Test fractal.
+ * Export to data uri.
+ */
 async function test1(){
 	const fractal = new FractalTest(500, 500, 10, 
 		new Color("#333333"), 
@@ -28,8 +30,10 @@ async function test1(){
 	console.log(proxy.context.canvas.toDataURL())
 }
 
-// CanvasProxy 500x500 and Complex function fractal.
-// Export to data uri.
+/** 
+ * CanvasProxy 500x500 and Complex function fractal.
+ * Export to data uri.
+ */
 async function test2(){
 	const fractal = new FractalComplexFunctionHole(500, 500)
 	const proxy = new CanvasProxy(500, 500)
@@ -77,6 +81,7 @@ async function test5(){
 	if(!_fs.existsSync(dir))
 		await fs.mkdir(dir)
 	
+	// Fixed size and colors.
 	const [width, height]:number[] = [500, 500]
 	const [color1, color2]:Color[] = [new Color("#ADFF2F"), new Color("#C71585")]
 
@@ -98,9 +103,45 @@ async function test5(){
 				fs.writeFile(dir+`/fractal${i}_${it}.png`, new Uint8Array(buffer))
 			})
 		}
-		
-
 	}
 }
 
-test5()
+/**
+ * Complex Function Fractal test.
+ * Random parameters / exception check.
+ */
+async function test6(){
+	const [width, height]: number[] = [300, 300]
+	const [color1, color2]: Color[] = [new Color("#ADFF2F"), new Color("#C71585")]
+
+	let [successCount, errorCount] = [0,0]
+	// Amount of tests.
+	const amount = 1000
+
+	for(let i=0; i<amount; i++){
+		// Factory this time.
+		let types = [
+			FractalComplexFunctionChaos,
+			FractalComplexFunctionHole,
+			FractalComplexFunctionKnot,
+			FractalComplexFunctionSphere,
+			FractalComplexFunctionWhirl
+		]
+		const fractal = new types[0](width, height)
+		const proxy = new PlainProxy()
+		try {
+			await fractal.generate(proxy)
+			successCount++
+		}
+		catch(err){
+			errorCount++
+			console.error(err)
+		}
+
+	}
+
+	console.log("test 6 finished")
+	console.log(`success: ${successCount}. error ${errorCount}`)
+}
+
+test6()
