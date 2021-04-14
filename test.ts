@@ -84,16 +84,17 @@ async function test5(){
 	// Fixed size and colors.
 	const [width, height]:number[] = [500, 500]
 	const [color1, color2]:Color[] = [new Color("#ADFF2F"), new Color("#C71585")]
+	const z = 500
 
 	for(let it = 400; it<8000; it*=1.5){
 		// I should use factory here.
 
 		const fractals: AFractalComplexFunction[] = [
-			new FractalComplexFunctionChaos(width, height, it, 1, color1, color2),
-			new FractalComplexFunctionHole(width, height, it, 1, color1, color2),
-			new FractalComplexFunctionKnot(width, height, it, 1, color1, color2),
-			new FractalComplexFunctionSphere(width, height, it, 1, color1, color2),
-			new FractalComplexFunctionWhirl(width, height, it, 1, color1, color2)
+			new FractalComplexFunctionChaos(width, height, it, z, color1, color2),
+			new FractalComplexFunctionHole(width, height, it, z, color1, color2),
+			new FractalComplexFunctionKnot(width, height, it, z, color1, color2),
+			new FractalComplexFunctionSphere(width, height, it, z, color1, color2),
+			new FractalComplexFunctionWhirl(width, height, it, z, color1, color2)
 		]
 		
 		for(let i=0; i<fractals.length; i++){

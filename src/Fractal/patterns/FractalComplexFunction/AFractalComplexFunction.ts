@@ -18,7 +18,7 @@ abstract class AFractalComplexFunction extends Fractal {
 	 */
 	constructor(width: number, height: number, iterations?: number, z?:number, firstColor?: Color, lastColor?: Color){
 		iterations ??= randomInRange(...AFractalComplexFunction.iterationRange)
-		z ??= Math.random()*1.4 + 0.1
+		z ??= randomInRange(...AFractalComplexFunction.zRange)
 
 		if(z <= 0 )
 			throw new RangeError("z must be positive");
@@ -76,7 +76,8 @@ abstract class AFractalComplexFunction extends Fractal {
 	/**
 	 * @description iterationRange[0] <= iterations <= iterationRange[1]
 	 */
-	 public static iterationRange:[number, number] = [400, 10000]
+	public static iterationRange:[number, number] = [400, 10000]
+	public static zRange:[number, number] = [200, 1000]
 }
 
 export default AFractalComplexFunction;
