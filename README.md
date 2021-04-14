@@ -23,7 +23,7 @@ $ npm install ?????????
 
 **generate** принимает **Proxy** и **Caption**.
 
-**Proxy** получает инструции, как отрисовать фрактал, и рисует его. 
+**Proxy** получает инструкции о том, как отрисовать фрактал, и рисует его. 
 
 **Caption** занимается логгированием информации о фрактале. Другими словами, является текстовым описанием фрактала.
 
@@ -32,7 +32,7 @@ $ npm install ?????????
 ### promise based
 ```ts
 const fractal = new FractalTest(500, 500, 10, 
-	new Color("#333333"), 
+  	new Color("#333333"), 
 	new Color("#00FF88")
 )
 const proxy = new CanvasProxy(500, 500)
@@ -98,7 +98,7 @@ fractal.generate(proxy, caption)
 
 Нужно рендерить изображение не на Canvas(в 3d, наример)? ~~Пользуемся StorageProxy и пишем отрисовку руками~~. Пишем свой класс Proxy.
 
-## More exapmles
+## More examples
 
 ```ts
 const [width, height]: number[] = [1024, 1024]
