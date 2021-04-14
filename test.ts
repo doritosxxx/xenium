@@ -143,4 +143,10 @@ async function test6(){
 	console.log(`success: ${successCount}. error ${errorCount}`)
 }
 
-test6()
+
+//test1()
+//test2()
+//test3()
+//test4()
+//test5()
+//test6()
