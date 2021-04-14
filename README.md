@@ -38,11 +38,10 @@ const fractal = new FractalTest(500, 500, 10,
 const proxy = new CanvasProxy(500, 500)
 const caption = new Caption()
 
-fractal.generate(proxy, caption)
-	.then(() => {
-		console.log(caption.toString())
-		console.log(proxy.context.canvas.toDataURL())
-	})
+fractal.generate(proxy, caption).then(() => {
+	console.log(caption.toString())
+	console.log(proxy.context.canvas.toDataURL())
+})
 ```
 
 ### async/await based
@@ -107,11 +106,10 @@ const fractal = new FractalComplexFunctionSphere(width, height, 8000, 1, color1,
 
 const proxy = new CanvasProxy(fractal.width, fractal.height)
 
-fractal.generate(proxy)
-	.then(()=>{
-		const buffer = (proxy.context.canvas as unknown as Canvas).toBuffer()
-		fs.writeFile("./example2_result.png", new Uint8Array(buffer))
-	})
+fractal.generate(proxy).then(()=>{
+	const buffer = (proxy.context.canvas as unknown as Canvas).toBuffer()
+	fs.writeFile("./example2_result.png", new Uint8Array(buffer))
+})
 ```
 
 ### Result 
