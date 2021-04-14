@@ -1,5 +1,5 @@
 {
-  "name": "fractal-lib",
+  "name": "xenium",
   "version": "1.0.0",
   "description": "Библиотека для генерации множества точек фрактала по его описанию.",
   "main": "lib/index.js",

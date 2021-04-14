@@ -1,9 +1,9 @@
-# fractal-lib
+# Xenium
  
 Библиотека для генерации множества точек фрактала по его описанию.
 
 <p align="center">
-  <img width="600" src="./img/fractalium.jpg" alt="FINALLY FRACTALIUM (with impact font)">
+  <img width="600" src="./img/fractalium.png" alt="FINALLY FRACTALIUM (with impact font)">
 </p> 
 
 ## Installation
