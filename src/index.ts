@@ -6,4 +6,9 @@ import * as patterns from './Fractal/patterns';
 import * as proxies from './Proxy';
 
 
-export { proxies, Fractal, drawing, graphicElements, Caption, patterns };
+// Вынужден экспортировать Canvas, пока не починят баг.
+// https://github.com/Automattic/node-canvas/issues/1783
+import type { Canvas } from 'canvas'
+
+
+export { proxies, Fractal, drawing, graphicElements, Caption, patterns, Canvas };

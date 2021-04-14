@@ -1,6 +1,6 @@
 {
   "name": "xenium",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Библиотека для генерации фракталов и их экспорта в различные форматы.",
   "main": "lib/index.js",
   "types": "lib",
