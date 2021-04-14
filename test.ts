@@ -7,7 +7,7 @@ import {
 	FractalComplexFunctionWhirl
 } from './src/Fractal/patterns/FractalComplexFunction';
 import FractalTest from './src/Fractal/patterns/FractalTest';
-import {CanvasProxy, StorageProxy} from './src/Proxy';
+import {CanvasProxy, StorageProxy, StubProxy} from './src/Proxy';
 import _fs  from 'fs'
 const fs = _fs.promises
 
@@ -112,7 +112,6 @@ async function test5(){
  */
 async function test6(){
 	const [width, height]: number[] = [300, 300]
-	const [color1, color2]: Color[] = [new Color("#ADFF2F"), new Color("#C71585")]
 
 	let [successCount, errorCount] = [0,0]
 	// Amount of tests.
@@ -128,7 +127,7 @@ async function test6(){
 			FractalComplexFunctionWhirl
 		]
 		const fractal = new types[0](width, height)
-		const proxy = new StorageProxy()
+		const proxy = new StubProxy()
 		try {
 			await fractal.generate(proxy)
 			successCount++
