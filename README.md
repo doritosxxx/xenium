@@ -69,7 +69,7 @@ fractal.generate(proxy, caption).then(() => {
 
 ## Library fractals.
 - FractalTest
-  - Linear gradient from the corner of te image.
+  - Linear gradient from the corner of the image.
 - FractalComplexFunctionChaos
   - Check /img 
 - FractalComplexFunctionHole
