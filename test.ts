@@ -14,7 +14,8 @@ const fs = _fs.promises
 import path from 'path'
 import Caption from './src/Caption';
 import AFractalComplexFunction from './src/Fractal/patterns/FractalComplexFunction/AFractalComplexFunction';
-import { Canvas, CanvasRenderingContext2D } from 'canvas'
+import { Canvas } from 'canvas'
+import {randomInRange} from './src/functions'
 
 /**
  * CanvasProxy 500x500 and Test fractal.
@@ -144,6 +145,22 @@ async function test6(){
 	console.log(`success: ${successCount}. error ${errorCount}`)
 }
 
+/**
+ * randomInRange method test.
+ */
+function test7(){
+	const length = 100
+	const iterations = 1e6;
+
+	const result:number[] = [...new Array(length+1)].map(e => 0)
+	for(let i=0; i<iterations; ++i){
+		result[randomInRange(0, length)]++;
+	}
+
+	console.log("test 7 finished")
+	console.log(result)
+}
+
 
 //test1()
 //test2()
@@ -151,3 +168,4 @@ async function test6(){
 //test4()
 //test5()
 //test6()
+//test7()
