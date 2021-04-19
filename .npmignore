@@ -1,4 +1,5 @@
 src/
 test.ts
-tsconfig.json
 .gitattributes
+.vscode/
+node_modules/
