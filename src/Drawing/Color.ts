@@ -30,9 +30,13 @@ class Color implements IColorlike {
 		this.b = b
 	}
 
-	toString(){
+	toString(): string{
 		const {r,g,b} = this
 		return '#' + ((r << 16) + (g << 8) + b).toString(16).padStart(6,'0');
+	}
+
+	toArray(): [number, number, number]{
+		return [this.r, this.g, this.b];
 	}
 
 	static FromString(string: string): Color {
