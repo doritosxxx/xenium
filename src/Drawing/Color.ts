@@ -39,6 +39,11 @@ class Color implements IColorlike {
 		return [this.r, this.g, this.b];
 	}
 
+	toDec(): number{
+		const {r,g,b} = this
+		return (r << 16) + (g << 8) + b;
+	}
+
 	static FromString(string: string): Color {
 		if(string[0] === '#')
 			string  = string.substr(1)
