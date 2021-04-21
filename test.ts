@@ -178,7 +178,7 @@ function test8(){
 			if(fractal instanceof t)
 				type = i
 		})
-		const link = `http://justpic.surge.sh/?c1=${fractal.firstColor.toDec()}&c2=${fractal.lastColor.toDec()}&it=${fractal.iterations}&z=${fractal.z}&t=${type}`
+		const link = `https://justpic.surge.sh/?c1=${fractal.firstColor.toDec()}&c2=${fractal.lastColor.toDec()}&it=${fractal.iterations}&z=${fractal.z}&t=${type}`
 		return link;
 	}
 
