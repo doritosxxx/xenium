@@ -161,6 +161,30 @@ function test7(){
 	console.log(result)
 }
 
+function test8(){
+	const types = [
+		FractalComplexFunctionChaos,
+		FractalComplexFunctionHole,
+		FractalComplexFunctionKnot,
+		FractalComplexFunctionSphere,
+		FractalComplexFunctionWhirl
+	]
+
+	const fractal = new FractalComplexFunctionKnot(100, 100, 1000, 400)
+
+	function buildLink(fractal: AFractalComplexFunction){
+		let type;
+		types.forEach((t, i) => {
+			if(fractal instanceof t)
+				type = i
+		})
+		const link = `http://justpic.surge.sh/?c1=${fractal.firstColor.toDec()}&c2=${fractal.lastColor.toDec()}&it=${fractal.iterations}&z=${fractal.z}&t=${type}`
+		return link;
+	}
+
+	console.log(buildLink(fractal))
+}
+
 
 //test1()
 //test2()
@@ -169,3 +193,4 @@ function test7(){
 //test5()
 //test6()
 //test7()
+//test8()
