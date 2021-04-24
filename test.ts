@@ -1,20 +1,22 @@
-import { Color } from './src/Drawing';
 import { 
+	AFractalComplexFunction,
 	FractalComplexFunctionChaos, 
 	FractalComplexFunctionHole,
 	FractalComplexFunctionKnot,
 	FractalComplexFunctionSphere,
-	FractalComplexFunctionWhirl
-} from './src/Fractal/patterns/FractalComplexFunction';
-import FractalTest from './src/Fractal/patterns/FractalTest';
-import {CanvasProxy, StorageProxy, StubProxy} from './src/Proxy';
+	FractalComplexFunctionWhirl,
+	FractalTest,
+
+	CanvasProxy, StorageProxy, StubProxy,
+
+	Color,
+	Caption,
+	Canvas
+} from './src/index';
 import _fs  from 'fs'
 const fs = _fs.promises
 
 import path from 'path'
-import Caption from './src/Caption';
-import AFractalComplexFunction from './src/Fractal/patterns/FractalComplexFunction/AFractalComplexFunction';
-import { Canvas } from 'canvas'
 import {randomInRange} from './src/functions'
 
 /**
@@ -186,11 +188,11 @@ function test8(){
 }
 
 
-//test1()
-//test2()
-//test3()
-//test4()
-//test5()
-//test6()
-//test7()
-//test8()
+// test1()
+// test2()
+// test3()
+// test4()
+// test5()
+test6()
+// test7()
+// test8()
