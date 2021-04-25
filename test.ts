@@ -1,5 +1,5 @@
 import { 
-	AFractalComplexFunction,
+	complexFracralTypeList,
 	FractalComplexFunctionChaos, 
 	FractalComplexFunctionHole,
 	FractalComplexFunctionKnot,
@@ -11,7 +11,8 @@ import {
 
 	Color,
 	Caption,
-	Canvas
+	Canvas,
+	
 } from './src/index';
 import _fs  from 'fs'
 const fs = _fs.promises
@@ -92,7 +93,7 @@ async function test5(){
 	for(let it = 400; it<8000; it*=1.5){
 		// I should use factory here.
 
-		const fractals: AFractalComplexFunction[] = [
+		const fractals = [
 			new FractalComplexFunctionChaos(width, height, it, z, color1, color2),
 			new FractalComplexFunctionHole(width, height, it, z, color1, color2),
 			new FractalComplexFunctionKnot(width, height, it, z, color1, color2),
@@ -174,7 +175,7 @@ function test8(){
 
 	const fractal = new FractalComplexFunctionKnot(100, 100, 1000, 400)
 
-	function buildLink(fractal: AFractalComplexFunction){
+	function buildLink(fractal: FractalComplexFunctionKnot){
 		let type;
 		types.forEach((t, i) => {
 			if(fractal instanceof t)
@@ -187,12 +188,28 @@ function test8(){
 	console.log(buildLink(fractal))
 }
 
+// v1.2.0 test. New way of representing list of awaliable fractals. 
+// Draws random complex 100x100 fractal. 
+async function test9(){
+	const fractalType = complexFracralTypeList[randomInRange(0, complexFracralTypeList.length-1)]
+
+	const fractalInstance = new fractalType(200, 200);
+
+	const proxy = new CanvasProxy(200, 200)
+	await fractalInstance.generate(proxy)
+	const datauri = proxy.context.canvas.toDataURL()
+
+	console.log("test 9")
+	console.log(datauri)
+}
+
 
 // test1()
 // test2()
 // test3()
 // test4()
 // test5()
-test6()
+// test6()
 // test7()
 // test8()
+// test9()

@@ -1,11 +1,27 @@
-import AFractalComplexFunction from './AFractalComplexFunction'
 import FractalComplexFunctionChaos from './FractalComplexFunctionChaos'
 import FractalComplexFunctionHole from './FractalComplexFunctionHole'
 import FractalComplexFunctionKnot from './FractalComplexFunctionKnot'
 import FractalComplexFunctionSphere from './FractalComplexFunctionSphere'
 import FractalComplexFunctionWhirl from './FractalComplexFunctionWhirl'
 
-const complexFracralList: typeof AFractalComplexFunction[] = [
+// Maybe I don't need this beacause I can somehow create this union type from the tuple below "on the go".
+/*
+type FractalComplexFunction = 
+	FractalComplexFunctionChaos | 
+	FractalComplexFunctionHole |
+	FractalComplexFunctionKnot |
+	FractalComplexFunctionSphere |
+	FractalComplexFunctionWhirl
+*/
+
+const complexFracralTypeList
+: [
+	typeof FractalComplexFunctionChaos,
+	typeof FractalComplexFunctionHole,
+	typeof FractalComplexFunctionKnot,
+	typeof FractalComplexFunctionSphere,
+	typeof FractalComplexFunctionWhirl,
+] = [
 	FractalComplexFunctionChaos,
 	FractalComplexFunctionHole,
 	FractalComplexFunctionKnot,
@@ -13,4 +29,5 @@ const complexFracralList: typeof AFractalComplexFunction[] = [
 	FractalComplexFunctionWhirl 
 ]
 
-export default complexFracralList;
+
+export default complexFracralTypeList;
