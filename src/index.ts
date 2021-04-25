@@ -11,9 +11,10 @@ import LineStyle from './Drawing/LineStyle'
 import Size from './Drawing/Size'
 import { GraphicElement, GraphicFilledRectangle, GraphicPoint, GraphicRectangle} from './Drawing/GraphicsElements'
 
-import complexFracralTypeList from './Fractal/patterns/FractalComplexFunction'
+import complexFractalTypeList from './Fractal/patterns/FractalComplexFunction'
 import { FractalComplexFunctionChaos, FractalComplexFunctionHole, FractalComplexFunctionKnot, FractalComplexFunctionSphere, FractalComplexFunctionWhirl, FractalTest } from './Fractal/patterns/index'
 
+// TODO
 // - Вынужден экспортировать Canvas, пока не починят баг.
 // https://github.com/Automattic/node-canvas/issues/1783
 // - Ты че дурак? А peer dependencies зачем?
@@ -38,7 +39,7 @@ export {
 	GraphicPoint,
 	GraphicRectangle,
 
-	complexFracralTypeList,
+	complexFractalTypeList,
 	FractalComplexFunctionChaos, 
 	FractalComplexFunctionHole, 
 	FractalComplexFunctionKnot, 

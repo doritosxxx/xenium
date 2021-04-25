@@ -14,7 +14,7 @@ type FractalComplexFunction =
 	FractalComplexFunctionWhirl
 */
 
-const complexFracralTypeList
+const complexFractalTypeList
 : [
 	typeof FractalComplexFunctionChaos,
 	typeof FractalComplexFunctionHole,
@@ -30,4 +30,4 @@ const complexFracralTypeList
 ]
 
 
-export default complexFracralTypeList;
+export default complexFractalTypeList;

@@ -1,5 +1,5 @@
 import { 
-	complexFracralTypeList,
+	complexFractalTypeList,
 	FractalComplexFunctionChaos, 
 	FractalComplexFunctionHole,
 	FractalComplexFunctionKnot,
@@ -191,7 +191,7 @@ function test8(){
 // v1.2.0 test. New way of representing list of awaliable fractals. 
 // Draws random complex 100x100 fractal. 
 async function test9(){
-	const fractalType = complexFracralTypeList[randomInRange(0, complexFracralTypeList.length-1)]
+	const fractalType = complexFractalTypeList[randomInRange(0, complexFractalTypeList.length-1)]
 
 	const fractalInstance = new fractalType(200, 200);
 
