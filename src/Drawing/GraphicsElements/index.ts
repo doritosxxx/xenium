@@ -1,6 +1,11 @@
-import GraphicElement from './GraphicElement';
-import GraphicFilledRectangle from './GraphicFilledRectangle';
-import GraphicPoint from './GraphicPoint';
-import GraphicRectangle from './GraphicRectangle';
+import GraphicElement from "./GraphicElement";
+import GraphicFilledRectangle from "./GraphicFilledRectangle";
+import GraphicPoint from "./GraphicPoint";
+import GraphicRectangle from "./GraphicRectangle";
 
-export { GraphicElement, GraphicPoint, GraphicRectangle, GraphicFilledRectangle };
+export {
+    GraphicElement,
+    GraphicPoint,
+    GraphicRectangle,
+    GraphicFilledRectangle,
+};

@@ -1,6 +1,6 @@
 {
-	"endOfLine": "crlf",
-	"useTabs": false,
-	"tabWidth": 4,
-	"trailingComma": "es5"
+    "endOfLine": "crlf",
+    "useTabs": false,
+    "tabWidth": 4,
+    "trailingComma": "es5"
 }

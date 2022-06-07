@@ -1,8 +1,8 @@
-import Caption from "../Caption"
+import Caption from "../Caption";
 
 export default interface ICaptionable {
-	/**
-	 * Returns object caption.
-	 */
-	getCaption(): Caption
+    /**
+     * Returns object caption.
+     */
+    getCaption(): Caption;
 }

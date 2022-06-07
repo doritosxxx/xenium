@@ -1,17 +1,18 @@
 import Complex from "complex.js";
 import AFractalComplexFunction from "./AFractalComplexFunction";
-import { pm, prec } from '../../../functions';
+import { pm, prec } from "../../../functions";
 
 export default class FractalComplexFunctionHole extends AFractalComplexFunction {
-	name:string = "Hole"
+    name: string = "Hole";
 
-	invoke(x: number): Complex {
-		return new Complex(Math.cos(x), x*Math.sin(this.z)).exp().mul( this.z, x )
-	}
+    invoke(x: number): Complex {
+        return new Complex(Math.cos(x), x * Math.sin(this.z))
+            .exp()
+            .mul(this.z, x);
+    }
 
-	toString(): string {
-		const z = this.z
-		return `f(x)=(${prec(z)}+xi)e^(cos(x)${pm(prec(Math.sin(z)))}xi)`
-	}
-
+    toString(): string {
+        const z = this.z;
+        return `f(x)=(${prec(z)}+xi)e^(cos(x)${pm(prec(Math.sin(z)))}xi)`;
+    }
 }

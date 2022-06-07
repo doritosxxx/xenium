@@ -1,2 +1,6 @@
 build
 node_modules
+tsconfig.json
+*.md
+package-lock.json
+package.json

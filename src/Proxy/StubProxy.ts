@@ -6,11 +6,9 @@ import ProxyBase from "./ProxyBase";
  * Use for tests.
  */
 export default class StubProxy extends ProxyBase {
+    protected point(point: GraphicPoint): void {}
 
-	protected point(point: GraphicPoint): void {}
+    protected rectangle(rectangle: GraphicRectangle): void {}
 
-	protected rectangle(rectangle: GraphicRectangle): void {}
-
-	protected filledRectangle(rectangle: GraphicRectangle): void {}
-	
+    protected filledRectangle(rectangle: GraphicRectangle): void {}
 }
