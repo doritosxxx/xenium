@@ -1,9 +1,9 @@
-import { Color } from '../Drawing'
-import ProxyBase from '../Proxy/ProxyBase'
-import IGeneratable from './IGeneratable'
 import Caption from "../Caption"
+import { Color } from "../Drawing"
+import ProxyBase from "../Proxy/ProxyBase"
+import ICaptionable from "./ICaptionable"
+import IGeneratable from "./IGeneratable"
 
-// Pattern must contain "generate" method to convert initial fractal data into points.
 /**
  * Represents fractal initial data.
  */
@@ -13,10 +13,9 @@ abstract class Fractal implements IGeneratable, ICaptionable {
 	readonly iterations: number
 	readonly firstColor: Color
 	readonly lastColor: Color
-	//abstract name: string
 
 	/**
-	 * 
+	 *
 	 * @param width - Width of the fractal.
 	 * @param height - Height of the fractal.
 	 * @param iterations - Amount of the generative iterations.
@@ -28,14 +27,14 @@ abstract class Fractal implements IGeneratable, ICaptionable {
 		width: number,
 		height: number,
 		iterations: number,
-		firstColor?: Color, 
+		firstColor?: Color,
 		lastColor?: Color
-	){
-		if(width <= 0)
+	) {
+		if (width <= 0)
 			throw new RangeError("width of an image must be greater than 0")
-		if(height <= 0)
+		if (height <= 0)
 			throw new RangeError("height of an image must be greater than 0")
-		if(iterations < 0)
+		if (iterations < 0)
 			throw new RangeError("iteration count must be not less than 0")
 
 		this.width = width
@@ -45,16 +44,7 @@ abstract class Fractal implements IGeneratable, ICaptionable {
 		this.lastColor = lastColor ?? Color.GetRandom()
 	}
 
-	/**
-	 * @todo Add fractal name into the caption.
-	 */
-	async generate(proxy: ProxyBase, caption?: Caption | undefined){
-		if(caption !== undefined){
-			//caption.add(this.name)
-			caption.add("colors", this.firstColor + "-" + this.lastColor)
-			caption.add("iterations", this.iterations)
-		}
-	}
+	abstract generate(proxy: ProxyBase): Promise<void>
 
 	getCaption(): Caption {
 		const caption = new Caption()
@@ -65,4 +55,4 @@ abstract class Fractal implements IGeneratable, ICaptionable {
 	}
 }
 
-export default Fractal;
+export default Fractal

@@ -28,7 +28,6 @@ abstract class AFractalComplexFunction extends Fractal {
 	}
 
 	async generate(proxy: ProxyBase, caption?: Caption){
-		super.generate(proxy, caption)
 		if(caption !== undefined){
 			caption.add("Complex Function Fractal " + this.name)
 			caption.add(this.toString())

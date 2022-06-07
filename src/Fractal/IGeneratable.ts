@@ -1,12 +1,10 @@
-import Caption from "../Caption";
-import ProxyBase from "../Proxy/ProxyBase";
+import ProxyBase from "../Proxy/ProxyBase"
 
 interface IGeneratable {
 	/**
-	 * Converts initial data to the points. 
-	 * @param caption - Caption builder which aggregates genetarion information.
+	 * Converts initial data to the points.
 	 */
-	generate: (proxy:ProxyBase, caption?:Caption) => Promise<void>
+	generate(proxy: ProxyBase): Promise<void>
 }
 
-export default IGeneratable;
+export default IGeneratable

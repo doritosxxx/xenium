@@ -13,8 +13,6 @@ class FractalTest extends Fractal {
 	}
 
 	async generate(proxy: ProxyBase, caption?: Caption | undefined): Promise<void> {
-		super.generate(proxy, caption)
-
 		if(caption !== undefined){
 			caption.add("some test string")
 			caption.add("this is key", "this is value")
