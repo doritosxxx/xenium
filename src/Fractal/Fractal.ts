@@ -1,13 +1,13 @@
-import Caption from '../Caption'
 import { Color } from '../Drawing'
 import ProxyBase from '../Proxy/ProxyBase'
 import IGeneratable from './IGeneratable'
+import Caption from "../Caption"
 
 // Pattern must contain "generate" method to convert initial fractal data into points.
 /**
  * Represents fractal initial data.
  */
-abstract class Fractal implements IGeneratable{
+abstract class Fractal implements IGeneratable, ICaptionable {
 	readonly width: number
 	readonly height: number
 	readonly iterations: number
@@ -56,6 +56,13 @@ abstract class Fractal implements IGeneratable{
 		}
 	}
 
+	getCaption(): Caption {
+		const caption = new Caption()
+		caption.add("colors", this.firstColor + "-" + this.lastColor)
+		caption.add("iterations", this.iterations)
+
+		return caption
+	}
 }
 
 export default Fractal;
