@@ -5,7 +5,7 @@ import ProxyBase from "./ProxyBase";
  * Does nothing.
  * Use for tests.
  */
-class StubProxy extends ProxyBase {
+export default class StubProxy extends ProxyBase {
 
 	protected point(point: GraphicPoint): void {}
 
@@ -14,5 +14,3 @@ class StubProxy extends ProxyBase {
 	protected filledRectangle(rectangle: GraphicRectangle): void {}
 	
 }
-
-export default StubProxy;

@@ -4,7 +4,7 @@ import ProxyBase from "./ProxyBase";
 /**
  * Simply adds all elements to the list.
  */
-class StorageProxy extends ProxyBase {
+export default class StorageProxy extends ProxyBase {
 	
 	public readonly graphics:Array<GraphicElement> = []
 
@@ -25,5 +25,3 @@ class StorageProxy extends ProxyBase {
 	}
 	
 }
-
-export default StorageProxy;

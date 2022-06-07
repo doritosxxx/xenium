@@ -1,4 +1,4 @@
-class Caption {
+export default class Caption {
 	public lineSeparator = "\n"
 	public entrySeparator = ": "
 
@@ -21,6 +21,3 @@ class Caption {
 		return this.lines.join(this.lineSeparator);
 	}
 }
-
-
-export default Caption;

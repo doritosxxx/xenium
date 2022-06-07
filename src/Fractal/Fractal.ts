@@ -7,7 +7,7 @@ import IGeneratable from "./IGeneratable"
 /**
  * Represents fractal initial data.
  */
-abstract class Fractal implements IGeneratable, ICaptionable {
+export default abstract class Fractal implements IGeneratable, ICaptionable {
 	readonly width: number
 	readonly height: number
 	readonly iterations: number
@@ -54,5 +54,3 @@ abstract class Fractal implements IGeneratable, ICaptionable {
 		return caption
 	}
 }
-
-export default Fractal

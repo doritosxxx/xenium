@@ -1,15 +1,6 @@
-import FractalTest from './FractalTest'
-import FractalComplexFunctionChaos from './FractalComplexFunction/FractalComplexFunctionChaos'
-import FractalComplexFunctionHole from './FractalComplexFunction/FractalComplexFunctionHole'
-import FractalComplexFunctionKnot from './FractalComplexFunction/FractalComplexFunctionKnot'
-import FractalComplexFunctionSphere from './FractalComplexFunction/FractalComplexFunctionSphere'
-import FractalComplexFunctionWhirl from './FractalComplexFunction/FractalComplexFunctionWhirl'
-
-export {
-	FractalComplexFunctionChaos,
-	FractalComplexFunctionHole,
-	FractalComplexFunctionKnot,
-	FractalComplexFunctionSphere,
-	FractalComplexFunctionWhirl, 
-	FractalTest
-}
+export { default as FractalTest } from "./FractalTest"
+export { default as FractalComplexFunctionChaos } from "./FractalComplexFunction/FractalComplexFunctionChaos"
+export { default as FractalComplexFunctionHole } from "./FractalComplexFunction/FractalComplexFunctionHole"
+export { default as FractalComplexFunctionKnot } from "./FractalComplexFunction/FractalComplexFunctionKnot"
+export { default as FractalComplexFunctionSphere } from "./FractalComplexFunction/FractalComplexFunctionSphere"
+export { default as FractalComplexFunctionWhirl } from "./FractalComplexFunction/FractalComplexFunctionWhirl"

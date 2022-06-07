@@ -2,7 +2,7 @@ import Complex from "complex.js";
 import AFractalComplexFunction from "./AFractalComplexFunction";
 import { prec } from '../../../functions';
 
-class FractalComplexFunctionWhirl extends AFractalComplexFunction {
+export default  class FractalComplexFunctionWhirl extends AFractalComplexFunction {
 	name:string = "Whirl"
 
 	invoke(x: number): Complex {
@@ -15,5 +15,3 @@ class FractalComplexFunctionWhirl extends AFractalComplexFunction {
 	}
 
 }
-
-export default FractalComplexFunctionWhirl;

@@ -1,6 +1,6 @@
 import { GraphicElement, GraphicPoint, GraphicRectangle, GraphicFilledRectangle } from '../Drawing/GraphicsElements';
 
-abstract class ProxyBase {
+export default abstract class ProxyBase {
 
 	/**
 	 * Maps element to its processing method. 
@@ -27,5 +27,3 @@ abstract class ProxyBase {
 	}
 	// TODO: Add more proxy methods if required.
 }
-
-export default ProxyBase;

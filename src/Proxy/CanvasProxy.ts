@@ -3,7 +3,7 @@ import { LineStyle } from '../Drawing';
 import { GraphicPoint, GraphicRectangle, GraphicFilledRectangle } from '../Drawing/GraphicsElements';
 import ProxyBase from './ProxyBase'
 
-class CanvasProxy extends ProxyBase {
+export default class CanvasProxy extends ProxyBase {
 	public readonly context: CanvasRenderingContext2D
 
 	constructor(width:number, height:number){
@@ -54,5 +54,3 @@ class CanvasProxy extends ProxyBase {
 	}
 
 }
-
-export default CanvasProxy;

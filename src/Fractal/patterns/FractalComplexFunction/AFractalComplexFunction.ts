@@ -6,7 +6,7 @@ import { randomInRange } from '../../../functions';
 import { ProxyBase } from '../../../Proxy';
 import Fractal from "../../Fractal";
 
-abstract class AFractalComplexFunction extends Fractal {
+export default abstract class AFractalComplexFunction extends Fractal {
 	abstract name:string
 	z: number
 	/**
@@ -78,5 +78,3 @@ abstract class AFractalComplexFunction extends Fractal {
 	public static iterationRange:[number, number] = [400, 10000]
 	public static zRange:[number, number] = [200, 1000]
 }
-
-export default AFractalComplexFunction;
