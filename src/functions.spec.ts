@@ -1,4 +1,4 @@
-import { pm, prec } from "../src/functions";
+import { pm, prec } from "./functions";
 
 // `prec` function tests.
 test("should leave number as is", () => {
@@ -59,6 +59,6 @@ test("should append `+` at the beginning", () => {
 });
 
 test("should append `+` at the beginning", () => {
-	// That's wierd but `-0` converted to string is `0` (without minus sign).
+    // That's wierd but `-0` converted to string is `0` (without minus sign).
     expect(pm(-0)).toBe("+0");
 });
