@@ -1,5 +1,14 @@
 src/
-test.ts
+img/
+tests.ts
 .gitattributes
 .vscode/
 node_modules/
+
+# tests
+*.spec.ts
+jest.config.js
+
+# prettier
+.prettierignore
+.prettierrc.json
