@@ -1,7 +1,7 @@
 import Caption from "./Caption";
 
 test("should return empty string", () => {
-    expect(new Caption().toString()).toEqual("");
+    expect(new Caption().toString()).toBe("");
 });
 
 test("should return single key", () => {
@@ -37,4 +37,16 @@ test("should return mixed key-value and key entries", () => {
     caption.add("key", "value");
     caption.add("other", "this");
     expect(caption.toString()).toBe("key\nkey: value\nother: this");
+});
+
+test("should keep zero value", () => {
+    const caption = new Caption();
+    caption.add("key", 0);
+    expect(caption.toString()).toBe("key: 0");
+});
+
+test("should keep key and empty string value", () => {
+    const caption = new Caption();
+    caption.add("key", "");
+    expect(caption.toString()).toBe("key: ");
 });
