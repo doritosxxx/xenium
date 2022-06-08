@@ -11,7 +11,7 @@ export default class Caption {
     add(key: string, value: string | number): void;
     add(value: string | number): void;
     add(key: string, value?: string | number): void {
-        if (!value) this.lines.push(key.toString());
+        if (value == undefined) this.lines.push(key.toString());
         else
             this.lines.push(
                 key.toString() + this.entrySeparator + value.toString()
