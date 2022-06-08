@@ -20,23 +20,6 @@ import path from "path";
 import { randomInRange } from "./src/functions";
 
 /**
- * CanvasProxy 500x500 and Test fractal.
- * Export to data uri.
- */
-async function test1() {
-    const fractal = new FractalTest(
-        500,
-        500,
-        10,
-        new Color("#333333"),
-        new Color("#00FF88")
-    );
-    const proxy = new CanvasProxy(500, 500);
-    await fractal.generate(proxy);
-    console.log(proxy.context.canvas.toDataURL());
-}
-
-/**
  * CanvasProxy 500x500 and Complex function fractal.
  * Export to data uri.
  */
@@ -254,7 +237,7 @@ async function test9() {
 // test2()
 // test3()
 // test4()
-// test5()
+test5()
 // test6()
 // test7()
 // test8()
